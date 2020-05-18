@@ -9,6 +9,8 @@ export class Tab1Page {
 
   colors: string[];
   color: string;
+  sizes: string[];
+  size: string;
   fillTypes: string[];
   fill: string;
   disabled = false;
@@ -18,6 +20,8 @@ export class Tab1Page {
   constructor() {
     this.colors = ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'light', 'medium', 'dark'];
     this.color = this.colors[0];
+    this.sizes = ['small', 'default', 'large'];
+    this.size = this.sizes[1];
     this.fillTypes = ['solid', 'outline', 'clear'];
     this.fill = this.fillTypes[0];
   }
