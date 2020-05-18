@@ -7,9 +7,23 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  disableButtons = false;
+  colors: string[];
+  color: string;
+  fillTypes: string[];
+  fill: string;
+  disabled = false;
+  rounded = false;
   darkMode = false;
 
-  constructor() {}
+  constructor() {
+    this.colors = ['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'light', 'medium', 'dark'];
+    this.color = this.colors[0];
+    this.fillTypes = ['solid', 'outline', 'clear'];
+    this.fill = this.fillTypes[0];
+  }
+
+  changeTheme() {
+    document.body.classList.toggle('dark', this.darkMode);
+  }
 
 }
