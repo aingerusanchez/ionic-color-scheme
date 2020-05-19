@@ -32,74 +32,74 @@
         <ion-select-option [value]="fill" *ngFor="let fill of fillTypes">{{ fill | titlecase }}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item (click)="darkMode = !darkMode">
-      <ion-toggle [(ngModel)]="darkMode" (ionChange)="changeTheme()"></ion-toggle>
+    <ion-item button (click)="darkMode = !darkMode">
+      <ion-toggle [(ngModel)]="darkMode" (click)="darkMode = !darkMode" (ionChange)="changeTheme()"></ion-toggle>
       <ion-label class="ion-padding-horizontal">Switch to <b>Dark Theme</b></ion-label>
     </ion-item>
-    <ion-item (click)="rounded = !rounded">
-      <ion-toggle [(ngModel)]="rounded"></ion-toggle>
+    <ion-item button (click)="rounded = !rounded">
+      <ion-toggle [(ngModel)]="rounded" (click)="rounded = !rounded"></ion-toggle>
       <ion-label class="ion-padding-horizontal">Switch shape to <b>rounded</b></ion-label>
     </ion-item>
-    <ion-item (click)="disabled = !disabled">
-      <ion-toggle [(ngModel)]="disabled"></ion-toggle>
+    <ion-item button (click)="disabled = !disabled">
+      <ion-toggle [(ngModel)]="disabled" (click)="disabled = !disabled"></ion-toggle>
       <ion-label class="ion-padding-horizontal">Change to <b>disabled</b></ion-label>
     </ion-item>
   </ion-list>
 
-    <h3>Button Types:</h3>
-    <ion-row>
-      <ion-col size="4" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" fill="solid" shape="round" [color]="color" expand="block" [size]="size"
-          shape="{{ rounded ? 'round' : '' }}">
-          Solid
-        </ion-button>
-      </ion-col>
-      <ion-col size="4" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" fill="outline" shape="round" [color]="color" expand="block" [size]="size"
-          shape="{{ rounded ? 'round' : '' }}">
-          Outline
-        </ion-button>
-      </ion-col>
-      <ion-col size="4" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" fill="clear" shape="round" [color]="color" expand="block" [size]="size"
-          shape="{{ rounded ? 'round' : '' }}">
-          Clear
-        </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-button [disabled]="disabled" shape="round" [color]="color" expand="block" [size]="size"
-      shape="{{ rounded ? 'round' : '' }}">
-      Block
-    </ion-button>
+  <h3>Button Types:</h3>
+  <ion-row>
+    <ion-col size="4" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" fill="solid" shape="round" [color]="color" expand="block" [size]="size"
+        shape="{{ rounded ? 'round' : '' }}">
+        Solid
+      </ion-button>
+    </ion-col>
+    <ion-col size="4" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" fill="outline" shape="round" [color]="color" expand="block" [size]="size"
+        shape="{{ rounded ? 'round' : '' }}">
+        Outline
+      </ion-button>
+    </ion-col>
+    <ion-col size="4" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" fill="clear" shape="round" [color]="color" expand="block" [size]="size"
+        shape="{{ rounded ? 'round' : '' }}">
+        Clear
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-button [disabled]="disabled" shape="round" [color]="color" expand="block" [size]="size"
+    shape="{{ rounded ? 'round' : '' }}">
+    Block
+  </ion-button>
 
-    <h3>Palette Colors:</h3>
-    <ion-row>
-      <ion-col size="4" *ngFor="let color of colors | slice:0:3" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
-          [fill]="fill" [size]="size">
-          {{ color | titlecase }}
-        </ion-button>
-      </ion-col>
-    </ion-row>
+  <h3>Palette Colors:</h3>
+  <ion-row>
+    <ion-col size="4" *ngFor="let color of colors | slice:0:3" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
+        [fill]="fill" [size]="size">
+        {{ color | titlecase }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
 
-    <h3>Status Colors:</h3>
-    <ion-row>
-      <ion-col size="4" *ngFor="let color of colors | slice:3:6" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
-          [fill]="fill" [size]="size">
-          {{ color | titlecase }}
-        </ion-button>
-      </ion-col>
-    </ion-row>
+  <h3>Status Colors:</h3>
+  <ion-row>
+    <ion-col size="4" *ngFor="let color of colors | slice:3:6" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
+        [fill]="fill" [size]="size">
+        {{ color | titlecase }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
 
-    <h3>Neutral Colors:</h3>
-    <ion-row>
-      <ion-col size="4" *ngFor="let color of colors | slice:6:9" class="ion-text-center ion-no-padding">
-        <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
-          [fill]="fill" [size]="size">
-          {{ color | titlecase }}
-        </ion-button>
-      </ion-col>
-    </ion-row>
+  <h3>Neutral Colors:</h3>
+  <ion-row>
+    <ion-col size="4" *ngFor="let color of colors | slice:6:9" class="ion-text-center ion-no-padding">
+      <ion-button [disabled]="disabled" color="{{color}}" expand="block" shape="{{ rounded ? 'round' : '' }}"
+        [fill]="fill" [size]="size">
+        {{ color | titlecase }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
