@@ -1,5 +1,7 @@
 {
   "name": "ionic-color-scheme",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
